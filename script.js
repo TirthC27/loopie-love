@@ -301,7 +301,7 @@ document.querySelectorAll('.nav-link').forEach(link => {
 // API Configuration
 const API_URL = window.location.hostname === 'localhost' 
     ? 'http://localhost:4000'
-    : 'https://loopie-love-backend.vercel.app';
+    : 'https://loopie-love-2.onrender.com';
 
 const API_ENDPOINT = window.location.hostname === 'localhost'
     ? '/test-store'
@@ -333,6 +333,24 @@ function showMessage(message, isSuccess = true) {
     }
 }
 
+// Show success popup with animation
+function showSuccessPopup() {
+    const popup = document.getElementById('successPopup');
+    popup.classList.add('show');
+    
+    // Prevent body scroll
+    document.body.style.overflow = 'hidden';
+}
+
+// Hide success popup
+function hideSuccessPopup() {
+    const popup = document.getElementById('successPopup');
+    popup.classList.remove('show');
+    
+    // Restore body scroll
+    document.body.style.overflow = '';
+}
+
 // Submit to waitlist
 async function submitToWaitlist(email) {
     const btn = document.getElementById('waitlistBtn');
@@ -357,12 +375,8 @@ async function submitToWaitlist(email) {
         const data = await response.json();
         
         if (response.ok) {
-            // Success - show appropriate message
-            if (data.alreadyExists) {
-                showMessage("You're already part of the Loppi Circle 💗", true);
-            } else {
-                showMessage("You're in 💗 Welcome to the Loppi Circle", true);
-            }
+            // Success - show popup animation
+            showSuccessPopup();
             input.value = '';
         } else {
             // Error from backend
@@ -389,6 +403,29 @@ async function submitToWaitlist(email) {
 document.addEventListener('DOMContentLoaded', () => {
     const emailInput = document.getElementById('waitlistEmail');
     const submitBtn = document.getElementById('waitlistBtn');
+    const closePopupBtn = document.getElementById('closePopup');
+    const popup = document.getElementById('successPopup');
+    
+    // Close popup button
+    if (closePopupBtn) {
+        closePopupBtn.addEventListener('click', hideSuccessPopup);
+    }
+    
+    // Close popup on overlay click
+    if (popup) {
+        popup.addEventListener('click', (e) => {
+            if (e.target === popup) {
+                hideSuccessPopup();
+            }
+        });
+    }
+    
+    // Close popup on ESC key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && popup.classList.contains('show')) {
+            hideSuccessPopup();
+        }
+    });
     
     if (submitBtn && emailInput) {
         submitBtn.addEventListener('click', () => {
