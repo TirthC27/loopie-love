@@ -1,23 +1,18 @@
 {
-  "name": "loppi-love-waitlist",
+  "name": "loppi-love-monorepo",
   "version": "1.0.0",
-  "description": "Loppi Love - Crochet Lifestyle Brand Waitlist",
-  "main": "index.html",
+  "private": true,
+  "type": "module",
   "scripts": {
-    "dev": "vercel dev",
-    "deploy": "vercel --prod"
+    "start": "node backend/index.js",
+    "backend": "node backend/index.js",
+    "dev:backend": "node --watch backend/index.js",
+    "deploy:frontend": "vercel --prod"
   },
-  "keywords": [
-    "crochet",
-    "lifestyle",
-    "waitlist"
-  ],
-  "author": "Loppi Love",
-  "license": "ISC",
   "dependencies": {
-    "firebase-admin": "^12.0.0"
-  },
-  "devDependencies": {
-    "@vercel/node": "^3.0.0"
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "firebase-admin": "^12.0.0",
+    "dotenv": "^16.3.1"
   }
 }
