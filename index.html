@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loppi Love - Soft Joy, Woven Into Everyday Moments</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="40" height="40" rx="8" fill="#1a1a1a"/>
+                    <path d="M12 20C12 15.5817 15.5817 12 20 12C24.4183 12 28 15.5817 28 20C28 24.4183 24.4183 28 20 28C15.5817 28 12 24.4183 12 20Z" fill="#fff"/>
+                    <circle cx="20" cy="20" r="4" fill="#1a1a1a"/>
+                </svg>
+            </div>
+            
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#collection" class="nav-link">Collection</a></li>
+                <li><a href="#why" class="nav-link">Why Loppi</a></li>
+                <li><a href="#faqs" class="nav-link">FAQs</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+            </ul>
+            
+            <div class="nav-cta">
+                <button class="btn-primary">Join Waitlist</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <canvas id="liquidTextCanvas" class="liquid-text-canvas"></canvas>
+            </h1>
+            
+            <p class="hero-subtitle">
+                Be the first to know when new crochet pieces launch. Get exclusive early access,<br>special drops, and updates straight to your inbox.
+            </p>
+            
+            <!-- Social Proof -->
+            <div class="social-proof">
+                <div class="avatars">
+                    <div class="avatar" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
+                    <div class="avatar" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);"></div>
+                    <div class="avatar" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);"></div>
+                    <div class="avatar" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);"></div>
+                </div>
+                <div class="proof-text">
+                    <div class="stars">
+                        <span>⭐</span>
+                        <span>⭐</span>
+                        <span>⭐</span>
+                        <span>⭐</span>
+                        <span>⭐</span>
+                    </div>
+                    <p class="proof-description">Join 1,000+ crochet enthusiasts</p>
+                </div>
+            </div>
+            
+            <!-- Email Signup -->
+            <div class="email-signup">
+                <div class="input-wrapper">
+                    <input type="email" id="waitlistEmail" placeholder="Your email address" class="email-input">
+                    <button class="btn-submit" id="waitlistBtn">Join the Circle</button>
+                </div>
+                <p class="signup-message" id="signupMessage"></p>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

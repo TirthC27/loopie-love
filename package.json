@@ -1,0 +1,23 @@
+{
+  "name": "loppi-love-waitlist",
+  "version": "1.0.0",
+  "description": "Loppi Love - Crochet Lifestyle Brand Waitlist",
+  "main": "index.html",
+  "scripts": {
+    "dev": "vercel dev",
+    "deploy": "vercel --prod"
+  },
+  "keywords": [
+    "crochet",
+    "lifestyle",
+    "waitlist"
+  ],
+  "author": "Loppi Love",
+  "license": "ISC",
+  "dependencies": {
+    "firebase-admin": "^12.0.0"
+  },
+  "devDependencies": {
+    "@vercel/node": "^3.0.0"
+  }
+}

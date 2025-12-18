@@ -1,0 +1,16 @@
+# Ignore backend folders
+backend/
+api/
+
+# Ignore environment files
+.env
+.env.local
+.env.example
+
+# Ignore docs
+*.md
+
+# Ignore Firebase JSON
+*.json
+!vercel.json
+!package.json
